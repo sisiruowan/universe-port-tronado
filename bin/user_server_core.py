@@ -26,6 +26,7 @@ class ApiHandler(object):
             res = UserInfo.get_username_list(user_list) 
             if res:
                 rsp = {'errno': 0, 'errmsg': 'success', 'results': res}
+                logger.get().debug('%s success, res:%s' % (myself, res))
             else:
                 rsp = {'errno': 10001, 'errmsg': 'failed'}
             return (200, rsp)
@@ -44,6 +45,7 @@ class ApiHandler(object):
             res = UserInfo.get_username(user_id)
             if res:
                 rsp = {'errno': 0, 'errmsg': 'success', 'results': res}
+                logger.get().debug('%s success, res:%s' % (myself, res))
             else:
                 rsp = {'errno': 10001, 'errmsg': 'failed'}
             return (200, rsp)

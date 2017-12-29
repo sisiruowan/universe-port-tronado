@@ -12,7 +12,7 @@ from log import g_log_inst as logger
 
 class UserInfo(object):
     # load user_infos from file
-    if os.path,exists(user_info_fpath):
+    if os.path.exists(user_info_fpath):
         with codecs.open(user_info_fpath, 'r', 'utf-8') as f:
             user_infos = [x.strip().split('\t') for x in f]
             for user_info in user_infos:
